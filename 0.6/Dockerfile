@@ -13,7 +13,7 @@ ENV DOCKER_BASE_VERSION=0.0.4
 RUN addgroup consul && \
     adduser -S -G consul consul
 
-COPY ["bin/gosu","bin/dumb-init","/bin"]
+COPY ["bin/gosu","bin/dumb-init","/bin/"]
 
 # Set up certificates, our base tools, and Consul.
 RUN mkdir -p /tmp/build && \
