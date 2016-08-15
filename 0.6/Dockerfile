@@ -22,7 +22,7 @@ RUN apk add --no-cache ca-certificates openssl && \
     wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_arm.zip && \
     unzip -d /bin consul_${CONSUL_VERSION}_linux_arm.zip && \
     cd /tmp && \
-    rm -rf /tmp/build && \
+    rm -rf /tmp/build
     
 # The /consul/data dir is used by Consul to store state. The agent will be started
 # with /consul/config as the configuration directory so you can add additional
