@@ -16,7 +16,8 @@ RUN addgroup consul && \
 COPY ["bin/gosu","bin/dumb-init","/bin/"]
 
 # Set up certificates, our base tools, and Consul.
-RUN mkdir -p /tmp/build && \
+RUN apk add --no-cache ca-certificates && \
+    mkdir -p /tmp/build && \
     cd /tmp/build && \
     wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_arm.zip && \
     wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS && \
