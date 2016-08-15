@@ -20,8 +20,6 @@ RUN apk add --no-cache ca-certificates && \
     mkdir -p /tmp/build && \
     cd /tmp/build && \
     wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_arm.zip && \
-    wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS && \
-    grep consul_${CONSUL_VERSION}_linux_arm.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c && \
     unzip -d /bin consul_${CONSUL_VERSION}_linux_arm.zip && \
     cd /tmp && \
     rm -rf /tmp/build && \
